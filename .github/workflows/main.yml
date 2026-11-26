@@ -11,7 +11,7 @@ jobs:
 
   #           [variaveis] (variáveis de ambientes, chaves de acesso)
     env: 
-      API_BASE_URL: 'http://localhost:3000'
+      API_BASE_URL: 'http://localhost:4000'
       PORT: 4000
 
   #           [projetos] (aplicações em teste. projeto de testes, projeto auxiliar, etc)
