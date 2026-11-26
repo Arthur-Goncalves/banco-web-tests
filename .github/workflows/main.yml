@@ -26,5 +26,8 @@ jobs:
       - name: Iniciar o Mock Server
         run: npm run mock-server &
 
+      - name: Iniciar a aplicacao
+        run: npm run server &
+
       - name: Executar os testes
-        run: npm test &
+        run: npx cypress run
