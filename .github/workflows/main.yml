@@ -1,0 +1,30 @@
+name: CI Banco-web-tests
+
+# gatilhos ou triggers
+on: 
+  workflow_dispatch:
+
+jobs:
+  tests:
+  #           [config do SisOper] (windows/linux/mac, chrome/firefox, v1/v2)
+    runs-on: ubuntu-latest
+
+  #           [variaveis] (variáveis de ambientes, chaves de acesso)
+    env: 
+      API_BASE_URL: 'http://localhost:3000'
+      PORT: 4000
+
+  #           [projetos] (aplicações em teste. projeto de testes, projeto auxiliar, etc)
+    steps:
+      - name: Checkout/clone do repositório
+        uses: actions/checkout@v4
+
+  #           [acoes e passos] (instalar dependencias, subir servidor, executar testes, publicar relatorios, etc)
+      - name: Instalando deps
+        run: npm install
+
+      - name: Iniciar o Mock Server
+        run: npm run mock-server
+
+      - name: Executar os testes
+        run: npm test
